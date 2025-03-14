@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .birthday-container {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(45deg, #f4e4bc, #f8b7d8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .birthday-text {
+            font-family: 'Caveat', cursive;
+            font-size: 70px;
+            text-align: center;
+            padding: 20px;
+            animation: colorChange 3s infinite;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff6b6b; transform: scale(1) rotate(0deg); }
+            25% { color: #4ecdc4; transform: scale(1.05) rotate(2deg); }
+            50% { color: #45b7d1; transform: scale(1) rotate(0deg); }
+            75% { color: #96c93d; transform: scale(1.05) rotate(-2deg); }
+            100% { color: #ff6b6b; transform: scale(1) rotate(0deg); }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: sparkleAnim 2s infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes sparkleAnim {
+            0% { transform: scale(0) translateY(0); opacity: 1; }
+            50% { transform: scale(1.2) translateY(-50px); opacity: 0.8; }
+            100% { transform: scale(0) translateY(-100px); opacity: 0; }
+        }
+
+        /* Multiple sparkles with different delays and positions */
+        .sparkle:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { left: 40%; animation-delay: 0.5s; background: #ff6b6b; }
+        .sparkle:nth-child(3) { left: 60%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { left: 80%; animation-delay: 1.5s; background: #4ecdc4; }
+        .sparkle:nth-child(5) { left: 30%; animation-delay: 0.3s; }
+        .sparkle:nth-child(6) { left: 70%; animation-delay: 0.8s; background: #96c93d; }
+    </style>
+</head>
+<body>
+    <div class="birthday-container">
+        <div class="birthday-text">Happy Birthday Yolanda!</div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+</body>
+</html>
